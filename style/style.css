@@ -13,3 +13,41 @@
 .inter-font{
     font-family: "Inter", sans-serif;
 }
+
+/* .liniear-gradient{
+    #FFFFFF
+#797DFCFF
+#797DFC00
+#FFFFFF
+}
+ */
+
+
+ .search-container {
+    position: relative;
+    width: 300px; /* or any desired width */
+    
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px; /* Make room for the button */
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    outline: none;
+  }
+  
+  .search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: none;
+    background: #797DFC;
+    color: #fff;
+    border-radius: 0 50px 50px 0;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+  }

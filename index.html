@@ -10,7 +10,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header class="container-self">
+    <header class="container-self mulish-font">
+      <!-- Navbar start -->
         <nav>
             <div class="navbar mt-4 bg-base-100 flex justify-between">
               <div class="navbar-start">
@@ -22,15 +23,10 @@
                     </svg>
                   </div>
                   <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>Item 1</a></li>
-                    <li>
-                      <a>Parent</a>
-                      <ul class="p-2">
-                        <li><a>Submenu 1</a></li>
-                        <li><a>Submenu 2</a></li>
-                      </ul>
-                    </li>
-                    <li><a>Item 3</a></li>
+                    <li><a>Home</a></li>
+                    <li><a>Add</a></li>
+                    <li><a>Edit</a></li>
+                    <li><a>Page</a></li>
                   </ul>
                 </div>
                 <h2 class=" lg:text-[2rem] text-[24px] black_primary font-[700] lg:font-[900]">
@@ -55,15 +51,51 @@
                   </ul>
                 </div>
                 <div class="navbar-end">
-                  <a class="btn bg-[#7D7DFC] rounded-[50px] text-white hover:text-black">Sign In</a>
+                  <a class="btn bg-[#7D7DFC] rounded-[50px] text-white hover:text-black">Sign in</a>
                 </div>
               </div>
             </div>
           </nav>
+          <!-- Navbar end -->
+
+          <!-- Banner section start -->
+          <div class="bg-[#12132D] rounded-3xl mt-4 mx-4 lg:mx-0">
+            <div class="flex flex-col lg:flex-row justify-center gap-4 bg-[url(./images/bgbanner.png)] bg-cover bg-center bg-no-repeat p-8 lg:p-24">
+              <div class="flex-1">
+                <h1 class="text-4xl lg:text-6xl w-full lg:w-[633px] text-white font-extrabold mb-5">Welcome to the <span>TiDings</span> Forum</h1>
+                <p class="text-base lg:text-xl w-full lg:w-[455px] font-medium text-white mb-8">Share your favorite opinion and connected with us!</p>
+
+                <div class="search-container">
+                  <input type="text" class="search-input" placeholder="Search...">
+                  <button class="search-btn">Search</button>
+                </div>
+
+              </div>
+              <div class="bg-white flex-1 space-y-4 rounded-3xl p-6 lg:p-12">
+                <div class="flex justify-between ">
+                  <h1 class="text-base lg:text-2xl font-medium text-[#0C0D2DCC]">Registered Users</h1>
+                  <p class="text-base lg:text-2xl font-medium text-[#0C0D2DCC]">01</p>
+                </div>
+                <div class="flex justify-between ">
+                  <h1 class="text-base lg:text-2xl font-medium text-[#0C0D2DCC]">Forum</h1>
+                  <p class="text-base lg:text-2xl font-medium text-[#0C0D2DCC]">05</p>
+                </div>
+                <div class="flex justify-between ">
+                  <h1 class="text-base lg:text-2xl font-medium text-[#0C0D2DCC]">Topics</h1>
+                  <p class="text-base lg:text-2xl font-medium text-[#0C0D2DCC]">01</p>
+                </div>
+                <div class="flex justify-between ">
+                  <h1 class="text-base lg:text-2xl font-medium text-[#0C0D2DCC]">Replies</h1>
+                  <p class="text-base lg:text-2xl font-medium text-[#0C0D2DCC]">01</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Banner section End -->
     </header>
 
     <main class="container-self">
-
+      
     </main>
 
     <footer class="container-self">
