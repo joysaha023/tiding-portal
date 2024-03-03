@@ -15,7 +15,12 @@
 }
 
 
-
+.gradient_text{
+    background: black;
+    background: linear-gradient(to right, #3796f5 0%, #1e90ff 50%, #083b6e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 .search-container {
     position: relative;

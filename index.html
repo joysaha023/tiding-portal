@@ -29,7 +29,7 @@
                     <li><a>Page</a></li>
                   </ul>
                 </div>
-                <h2 class=" lg:text-[2rem] text-[24px] black_primary font-[700] lg:font-[900]">
+                <h2 class=" lg:text-[2rem] text-[24px] black_primary font-[700] lg:font-black">
                   <a href="#">TiDings</a>
                 </h2>
               </div>
@@ -51,7 +51,7 @@
                   </ul>
                 </div>
                 <div class="navbar-end">
-                  <a class="btn bg-[#7D7DFC] rounded-[50px] text-white hover:text-black">Sign in</a>
+                  <a class="btn bg-[#7D7DFC] rounded-[50px] text-white hover:text-black">SignIn</a>
                 </div>
               </div>
             </div>
@@ -62,13 +62,16 @@
           <div class="bg-[#12132D] rounded-3xl mt-4 mx-4 lg:mx-0">
             <div class="flex flex-col lg:flex-row justify-center gap-4 bg-[url(./images/bgbanner.png)] bg-cover bg-center bg-no-repeat p-8 lg:p-24">
               <div class="flex-1">
-                <h1 class="text-4xl lg:text-6xl w-full lg:w-[633px] text-white font-extrabold mb-5">Welcome to the <span>TiDings</span> Forum</h1>
+                <h1 class="text-4xl lg:text-6xl w-full lg:w-[633px] text-white font-extrabold mb-5">Welcome to the <span class="gradient_text">TiDings</span> Forum</h1>
                 <p class="text-base lg:text-xl w-full lg:w-[455px] font-medium text-white mb-8">Share your favorite opinion and connected with us!</p>
 
-                <div class="search-container">
-                  <input type="text" class="search-input" placeholder="Search...">
-                  <button class="search-btn">Search</button>
-                </div>
+                <!-- input box -->
+              <div class="flex lg:w-[80%] mt-[.625rem] xl:w-[80%] 2xl:w-[60%] justify-between bg-white py-[.3125rem] pl-4 pr-[.3125rem] rounded-[2.1875rem]">
+                    <input placeholder="Search here...." class=" py-[.5rem] lg:py-[.625rem] outline-none w-[65%]    "
+                      type="text">
+                    <button
+                      class="lg:py-[.625rem] py-[.5rem] lg:px-8 px-6 rounded-[32px] bg-[#7D7DFC] lg:text-[20px] text-[18px] text-white lg:font-bold cursor-pointer">Search</button>
+              </div>
 
               </div>
               <div class="bg-white flex-1 space-y-4 rounded-3xl p-6 lg:p-12">
@@ -94,11 +97,18 @@
           <!-- Banner section End -->
     </header>
 
-    <main class="container-self">
-      
+    <main class=" mx-4 lg:mx-0">
+      <!-- Let's Discuss section start -->
+      <section class="container-self mt-12 lg:mt-24">
+        <div class="text-center">
+          <h1 class="text-3xl lg:text-4xl font-black mb-3 lg:mb-6 mulish-font">Let’s Discuss</h1>
+          <p class="lg:w-[691px] text-sm font-normal lg:text-lg inter-font my-0 mx-auto text-[#12132D96]">You can find here tidings of lots of catagories musics coding comedy. and you can find the news of catagories by search.</p>
+        </div>
+      </section>
+      <!-- Let's Discuss section End -->
     </main>
 
-    <footer class="">
+    <footer class=" hidden">
       <div class="container-self pt-24">
         <h1 class="mulish-font text-2xl lg:text-4xl text-center font-extrabold mb-4">TiDings</h1>
         <p class="text-center text-sm lg:text-base font-normal mb-8">This is our news portal where you can music, comedy and coding article. <br> if you are programmer this is best site for you. Read our article and enjoy to get it.</p>
@@ -115,6 +125,7 @@
       </div>
     </footer>
     
+    <div style="margin-bottom: 500px;"></div>
     <script src="./js/index.js"></script>
 </body>
 </html>
