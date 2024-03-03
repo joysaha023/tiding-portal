@@ -1,5 +1,6 @@
 
-const displayData = document.getElementById('display-post')
+const displayData = document.getElementById('display-post');
+const postCardData = document.getElementById('post-card');
 
 
 //All post function and fetch api
@@ -73,3 +74,48 @@ const displayPost = async (postData) => {
 loadData()
 
 
+// All Letest post fetch and display data
+const latestPostData = async () => {
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const data = await res.json();
+    const latestPost = await data;
+    // console.log(latestPost)
+    showPostData(latestPost)
+}
+
+const showPostData = async (latestData) => {
+    // console.log(latestData)
+
+    latestData.forEach((card) => {
+        // console.log(card)
+
+        const createPostCard = document.createElement('div');
+        createPostCard.innerHTML = `
+        <div class="card w-full lg:w-96 bg-base-100 hover:bg-slate-100 border-2 shadow-xl">
+        <figure class="mx-6 mt-6 rounded-2xl"><img  src="${card.cover_image}" alt="image" /></figure>
+        <div class="card-body mulish-font">
+          <div class="flex gap-2">
+            <img src="./images/cal-icon.png" alt="">
+            <p class="text-base font-normal text-[#12132D99]">${card?.author?.posted_date || "No Date Available"}</p>
+          </div>
+          <h2 class="card-title text-lg mulish-font font-extrabold text-[#12132D]">${card.title}</h2>
+          <p class="text-base font-normal mulish-font text-[#12132D99]">${card.description}</p>
+          <div class="card-actions justify-start">
+            <div class="mt-4 flex gap-4">
+            <div class="w-11 h-11 rounded-full">
+            <img class="rounded-full" src="${card.profile_image}" alt="">
+            </div>
+              <div>
+                <h1 class="text-base mulish-font font-bold text-[#12132D]">${card.author.name}</h1>
+                <p class="text-sm mulish-font font-normal text-[#12132D99]">${card?.author?.designation || "Not provided"}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        `;
+        postCardData.appendChild(createPostCard)
+    })
+}
+
+latestPostData();
