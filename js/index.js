@@ -5,8 +5,8 @@ const postCardData = document.getElementById('post-card');
 
 //All post function and fetch api
 
-const loadData = async () =>{
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+const loadData = async (catagoryName = "comedy") =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${catagoryName}`);
     const data = await res.json();
     const newsData = data.posts;
     // console.log(newsData)
@@ -15,12 +15,12 @@ const loadData = async () =>{
 
 const displayPost = async (postData) => {
     // console.log(postData)
-
+    displayData.textContent = '';
 
 
     postData.forEach((item) => {
         // console.log(item)
-        
+       
         const createDiv = document.createElement('div');
         createDiv.innerHTML = `
         <div class="new-cont basis-[60%] mb-6 bg-[#f3f3f5] hover:bg-[#797DFC1A] transition  flex flex-col lg:flex-row justify-start gap-5 rounded-3xl p-5 lg:p-10">
@@ -29,7 +29,7 @@ const displayPost = async (postData) => {
           <div class="bg-white relative rounded-[16px] w-[4rem] h-[4rem]">
             <img class="w-full h-full object-cover rounded-[16px]" src="${item.image}" alt="">
             <!-- active icon  -->
-            <div class="active_status"></div>
+            <div id="active-btn" class="active_status"></div>
           </div>
         </div>
         <!-- news content  -->
@@ -67,9 +67,16 @@ const displayPost = async (postData) => {
         `;
         displayData.appendChild(createDiv)
 
+
     });
 };
 
+const searchFunction = async () => {
+    const inputText = document.getElementById('search-input').value;
+    // console.log(inputText)
+    loadData(inputText)
+}
+// searchFunction()
 
 loadData()
 
