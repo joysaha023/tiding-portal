@@ -5,7 +5,7 @@ const postCardData = document.getElementById('post-card');
 
 //All post function and fetch api
 
-const loadData = async (catagoryName = "comedy") =>{
+const loadData = async (catagoryName) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${catagoryName}`);
     const data = await res.json();
     const newsData = data.posts;
@@ -29,7 +29,9 @@ const displayPost = async (postData) => {
           <div class="bg-white relative rounded-[16px] w-[4rem] h-[4rem]">
             <img class="w-full h-full object-cover rounded-[16px]" src="${item.image}" alt="">
             <!-- active icon  -->
-            <div id="active-btn" class="active_status"></div>
+            <div class="${
+              item.isActive ? "active_status" : "deactive_status"
+            }"></div>
           </div>
         </div>
         <!-- news content  -->
@@ -60,13 +62,14 @@ const displayPost = async (postData) => {
                 <p class="text-base font-normal inter-font text-[#12132D99]">${item.posted_time} min</p>
               </div>
             </div>
-            <button class="cursor-pointer"><img src="./images/email-btn.png" alt=""></button>
+            <button id="append-btn" class="cursor-pointer"><img src="./images/email-btn.png" alt=""></button>
           </div>
         </div>
       </div>
         `;
         displayData.appendChild(createDiv)
 
+        
 
     });
 };
@@ -78,7 +81,7 @@ const searchFunction = async () => {
 }
 // searchFunction()
 
-loadData()
+loadData("")
 
 
 // All Letest post fetch and display data
