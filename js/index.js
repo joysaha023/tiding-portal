@@ -62,7 +62,7 @@ const displayPost = async (postData) => {
                 <p class="text-base font-normal inter-font text-[#12132D99]">${item.posted_time} min</p>
               </div>
             </div>
-            <button id="append-btn" onclick="markReadPost('${item.title.replace("'"," ")}', '${item.view_count}')" class="cursor-pointer"><img src="./images/email-btn.png" alt=""></button>
+            <button id="append-btn" onclick="markReadPost('${item.title.replace("'","")}', '${item.view_count}')" class="cursor-pointer"><img src="./images/email-btn.png" alt=""></button>
           </div>
         </div>
       </div>
@@ -79,8 +79,12 @@ const displayPost = async (postData) => {
 const searchFunction = async () => {
   loadingSpinner(true)
     const inputText = document.getElementById('search-input').value;
-
-      loadData(inputText)
+      if(inputText == ''){
+        alert('Please enter text...')
+      }
+      else{
+        loadData(inputText)
+      }
 }
 // searchFunction()
 
