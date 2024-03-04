@@ -146,7 +146,7 @@ const showPostData = async (latestData) => {
         <div class="card-body mulish-font">
           <div class="flex gap-2">
             <img src="./images/cal-icon.png" alt="">
-            <p class="text-base font-normal text-[#12132D99]">${card?.author?.posted_date || "No Date Available"}</p>
+            <p class="text-base font-normal text-[#12132D99]">${card?.author?.posted_date || "No Publish Date"}</p>
           </div>
           <h2 class="card-title text-lg mulish-font font-extrabold text-[#12132D]">${card.title}</h2>
           <p class="text-base font-normal mulish-font text-[#12132D99]">${card.description}</p>
@@ -157,7 +157,7 @@ const showPostData = async (latestData) => {
             </div>
               <div>
                 <h1 class="text-base mulish-font font-bold text-[#12132D]">${card.author.name}</h1>
-                <p class="text-sm mulish-font font-normal text-[#12132D99]">${card?.author?.designation || "Not provided"}</p>
+                <p class="text-sm mulish-font font-normal text-[#12132D99]">${card?.author?.designation || "Unknown"}</p>
               </div>
             </div>
           </div>
