@@ -62,24 +62,54 @@ const displayPost = async (postData) => {
                 <p class="text-base font-normal inter-font text-[#12132D99]">${item.posted_time} min</p>
               </div>
             </div>
-            <button id="append-btn" class="cursor-pointer"><img src="./images/email-btn.png" alt=""></button>
+            <button id="append-btn" onclick="markReadPost(${item.title}, ${item.view_count})" class="cursor-pointer"><img src="./images/email-btn.png" alt=""></button>
           </div>
         </div>
       </div>
         `;
+
+        setTimeout(() => {
+          loadingSpinner(false);
+        }, 2000);
+
         displayData.appendChild(createDiv)
-
-        
-
     });
 };
 
 const searchFunction = async () => {
+  loadingSpinner(true)
     const inputText = document.getElementById('search-input').value;
     // console.log(inputText)
     loadData(inputText)
 }
 // searchFunction()
+
+const loadingSpinner = (showSpinner) => {
+  const spinnerID = document.getElementById('loader-spinner')
+  if(showSpinner){
+    spinnerID.classList.remove('hidden')
+  }
+  else{
+    spinnerID.classList.add('hidden')
+  }
+}
+
+
+const markReadPost = (title, view) => {
+  const appendData = document.getElementById('append-data')
+  const appendDiv = document.createElement('div')
+  appendDiv.innerHTML = `
+  <div class="flex justify-between items-center bg-white rounded-[16px] p-[14px]">
+  <h4 class="basis-[70%] text-base font-[600]">10 Kids Unaware of Their Halloween Costume</h4>
+  <div class="basis-[30%] flex items-center gap-1 justify-end">
+    <img src="./images/eye.png" alt="">
+    <span>1,568</span>
+  </div>
+</div>
+  `;
+  appendData.appendChild(appendDiv)
+}
+markReadPost()
 
 loadData("")
 
