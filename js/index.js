@@ -20,7 +20,7 @@ const displayPost = async (postData) => {
 
     postData.forEach((item) => {
         // console.log(item)
-       
+        
         const createDiv = document.createElement('div');
         createDiv.innerHTML = `
         <div class="new-cont basis-[60%] mb-6 bg-[#f3f3f5] hover:bg-[#797DFC1A] transition  flex flex-col lg:flex-row justify-start gap-5 rounded-3xl p-5 lg:p-10">
@@ -79,12 +79,12 @@ const displayPost = async (postData) => {
 const searchFunction = async () => {
   loadingSpinner(true)
     const inputText = document.getElementById('search-input').value;
-      if(inputText == ''){
-        alert('Please enter text...')
-      }
-      else{
+      // if(inputText == ''){
+      //   alert('Please enter text...')
+      //   return;
+      // }
         loadData(inputText)
-      }
+      
 }
 // searchFunction()
 
